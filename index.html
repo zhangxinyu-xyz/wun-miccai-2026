@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WUN–MICCAI Joint Event on Responsible AI for Medical Decisions, Auckland, Thursday 26 November 2026. Programme, invited speakers, venue and registration information.">
+  <meta name="theme-color" content="#1a3a6b">
+  <title>WUN–MICCAI Joint Event | Auckland</title>
+  <style>
+    :root { color-scheme:light; --navy:#1a3a6b; --ink:#202b3a; --muted:#526174; --line:#d9e2ed;
+            --joint:#eef1f5; --joint-ink:#3b4757; --wun:#1a3a6b; --wun-soft:#e8eef7; --miccai:#0f6b66; --miccai-soft:#e3f2f0; --break:#fbf4e6; --break-ink:#7a4f00; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#fff; color:var(--ink); font:1.0625rem/1.7 Arial, Helvetica, sans-serif; }
+    a { color:var(--navy); text-underline-offset:.2em; }
+    a:hover { text-decoration-thickness:2px; }
+    a:focus-visible { outline:3px solid #ab5a00; outline-offset:5px; }
+    .wrap { width:min(960px, calc(100% - 3rem)); margin-inline:auto; }
+    .skip { position:absolute; top:-6rem; left:1rem; background:#fff; padding:.7rem 1rem; z-index:10; }
+    .skip:focus { top:.5rem; }
+    .masthead { border-bottom:1px solid var(--line); }
+    .masthead .wrap { min-height:82px; display:flex; justify-content:space-between; align-items:center; gap:1.5rem; padding-block:1rem; }
+    .logos { display:flex; align-items:center; gap:1.1rem; min-width:0; }
+    .logos a { display:block; line-height:0; border-radius:.3rem; }
+    .logos img { display:block; width:auto; }
+    .logo-wun { height:40px; }
+    .logo-miccai { height:46px; }
+    .logos .divider { width:1px; height:40px; background:var(--line); }
+    .masthead nav { display:flex; gap:1.2rem; font-size:.9375rem; }
+    main { display:block; padding-block:3rem 4rem; }
+    .eyebrow { margin:0 0 .6rem; color:var(--muted); font-size:.875rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(2rem, 4.5vw, 2.8rem); line-height:1.2; color:var(--navy); letter-spacing:-.025em; }
+    .subtitle { margin:.4rem 0 1.6rem; font-size:clamp(1.2rem, 2.6vw, 1.5rem); line-height:1.35; color:#374457; font-weight:400; }
+    h2 { margin:0 0 .85rem; font-size:1.65rem; line-height:1.3; color:var(--navy); letter-spacing:-.015em; }
+    h3 { margin:1.6rem 0 .5rem; font-size:1.2rem; line-height:1.35; color:var(--navy); }
+    p { margin:0 0 1rem; }
+    main section > p:not(.eyebrow):not(.subtitle) { text-align:justify; }
+    section + section { margin-top:2.4rem; }
+    ul, ol { padding-left:1.4rem; margin:.6rem 0 1rem; }
+    li { padding-left:.1rem; margin-bottom:.6rem; }
+    .note { color:var(--muted); font-size:.9375rem; }
+
+    /* Event details with emoji */
+    .event-details { width:fit-content; max-width:100%; list-style:none; padding:.75rem 1.4rem .75rem 1.1rem; margin:1.4rem 0 0; background:#f3f6fa; border-radius:.9rem; line-height:1.5; }
+    .event-details li { display:grid; grid-template-columns:1.7rem 1fr; margin:0; padding:.12rem 0; }
+    .event-details .emoji { font-size:1.05rem; line-height:1.45; }
+
+    /* Two-lane programme */
+    .programme { display:grid; grid-template-columns:8.5rem 1fr 1fr; gap:.5rem; margin:1.2rem 0 .8rem; }
+    .lane-head { padding:.65rem 1rem; border-radius:.75rem .75rem 0 0; color:#fff; font-weight:700; font-size:1rem; line-height:1.35; }
+    .lane-head small { display:block; font-weight:400; font-size:.8125rem; opacity:.85; }
+    .lane-head.wun { background:var(--wun); }
+    .lane-head.miccai { background:var(--miccai); }
+    .period { grid-column:1 / -1; display:flex; flex-wrap:wrap; align-items:baseline; gap:.2rem 1rem; margin-top:.9rem; padding-bottom:.35rem; border-bottom:2px solid var(--line); }
+    .period strong { color:var(--navy); font-size:1.05rem; }
+    .period span { color:var(--muted); font-size:.9375rem; }
+    .time { padding-top:.75rem; color:var(--muted); font-size:.9375rem; font-variant-numeric:tabular-nums; line-height:1.4; }
+    .slot { padding:.75rem 1rem; border-radius:.75rem; line-height:1.45; }
+    .slot strong { display:block; }
+    .slot .who { display:block; margin-top:.2rem; font-size:.9375rem; }
+    .slot .desc { display:block; margin-top:.2rem; font-size:.875rem; opacity:.85; }
+    .span2 { grid-column:span 2; }
+    .slot.compact { display:flex; flex-wrap:wrap; align-items:center; gap:.15rem .7rem; padding-block:.5rem; }
+    .slot.compact .tag { margin-bottom:0; }
+    .slot.compact strong, .slot.compact .who { display:inline; margin-top:0; }
+    .slot.compact .who { opacity:.85; }
+    .slot.joint { background:var(--joint); color:var(--joint-ink); }
+    .slot.wun { background:var(--wun-soft); color:var(--wun); border-left:4px solid var(--wun); }
+    .slot.miccai { background:var(--miccai-soft); color:var(--miccai); border-left:4px solid var(--miccai); }
+    .slot.break { background:var(--break); color:var(--break-ink); }
+    .lane { display:flex; flex-direction:column; gap:.5rem; }
+    .lane .slot-time { display:block; font-size:.8125rem; font-weight:700; letter-spacing:.02em; font-variant-numeric:tabular-nums; margin-bottom:.15rem; }
+    .lane .slot.miccai { flex:1; }
+    .tag { display:inline-block; margin-bottom:.3rem; padding:.05rem .5rem; border-radius:.3rem; font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; background:rgba(255,255,255,.7); }
+    .legend { display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; font-size:.875rem; color:var(--muted); margin:.4rem 0 0; padding:0; list-style:none; }
+    .legend li { margin:0; display:flex; align-items:center; gap:.45rem; }
+    .legend i { width:.9rem; height:.9rem; border-radius:.2rem; display:inline-block; }
+
+    /* Speakers */
+    .speaker-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:1.1rem; padding:0; margin:1.2rem 0; list-style:none; }
+    .speaker-grid li { min-width:0; margin:0; padding:0; }
+    .speaker-grid .speaker-name { font-size:1.125rem; }
+    #speakers h3:not(.speaker-name) { margin:1.4rem 0 0; }
+    .speaker-card { display:flex; flex-direction:column; height:100%; padding:1rem; overflow:hidden; color:var(--ink); background:#f3f5f7; border:1px solid transparent; border-radius:1rem; text-align:center; text-decoration:none; transition:transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease; }
+    a.speaker-card:hover { background:#fff; border-color:#c7d4e5; box-shadow:0 .7rem 1.6rem rgba(26,58,107,.12); transform:translateY(-3px); }
+    .speaker-card:focus-visible { outline:3px solid #ab5a00; outline-offset:4px; }
+    .speaker-photo { width:9rem; max-width:100%; aspect-ratio:1; margin:.4rem auto 0; overflow:hidden; background:#fff; border-radius:50%; display:grid; place-items:center; }
+    .speaker-photo img { display:block; width:100%; height:100%; object-fit:cover; }
+    .initials { font-size:2.4rem; font-weight:800; color:#b4c2d6; letter-spacing:.02em; }
+    .speaker-details { display:flex; flex:1; flex-direction:column; align-items:center; padding:1.2rem .45rem .45rem; }
+    .speaker-role { margin-bottom:.3rem; color:var(--muted); font-size:.8125rem; font-weight:700; letter-spacing:.045em; line-height:1.4; text-transform:uppercase; }
+    .speaker-name { margin:0; color:var(--navy); font-size:1.25rem; line-height:1.3; }
+    .speaker-affiliation { margin:.55rem 0 0; color:#374457; font-size:.9375rem; line-height:1.5; }
+
+    /* Organisers */
+    .chair-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:1.4rem 1rem; padding:0; margin:1.4rem 0 .6rem; list-style:none; }
+    .chair-grid li { min-width:0; margin:0; padding:0; }
+    .chair-card { display:flex; flex-direction:column; align-items:center; height:100%; padding:.6rem .3rem; color:var(--ink); text-align:center; text-decoration:none; border-radius:1rem; transition:transform .18s ease, background-color .18s ease; }
+    a.chair-card:hover { background:#f3f6fa; transform:translateY(-3px); }
+    a.chair-card:hover .chair-name { text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:.2em; }
+    .chair-card:focus-visible { outline:3px solid #ab5a00; outline-offset:4px; }
+    .chair-photo { width:5.5rem; max-width:100%; aspect-ratio:1; overflow:hidden; background:#eef2f7; border-radius:50%; display:grid; place-items:center; }
+    .chair-photo img { display:block; width:100%; height:100%; object-fit:cover; }
+    .chair-name { margin:.6rem 0 0; color:var(--navy); font-size:1rem; line-height:1.35; }
+    .chair-affiliation { margin:.2rem 0 0; color:#374457; font-size:.875rem; line-height:1.45; }
+
+    footer { border-top:1px solid var(--line); padding-block:1.7rem; color:var(--muted); font-size:.875rem; }
+    footer p { margin:0; }
+    footer p + p { margin-top:.4rem; }
+
+    @media (max-width:860px) {
+      .speaker-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width:600px) {
+      .wrap { width:calc(100% - 2rem); }
+      .masthead .wrap { min-height:64px; gap:.8rem; }
+      .logos { gap:.6rem; }
+      .logo-wun { height:24px; }
+      .logo-miccai { height:28px; }
+      .logos .divider { height:26px; }
+      .masthead nav { flex-direction:column; gap:.1rem; text-align:right; font-size:.875rem; }
+      main { padding-block:2rem 3rem; }
+      main section > p:not(.eyebrow):not(.subtitle) { hyphens:auto; -webkit-hyphens:auto; }
+      .programme { grid-template-columns:4.8rem 1fr 1fr; gap:.4rem; }
+      .lane-head { padding:.5rem .6rem; font-size:.875rem; }
+      .time { font-size:.8125rem; }
+      .slot { padding:.6rem .7rem; font-size:.9375rem; }
+      .slot .who { font-size:.875rem; }
+      .programme .lane { grid-column:1 / -1; }
+      .programme .lane-time { display:none; }
+      .speaker-grid { grid-template-columns:1fr; gap:1rem; }
+      .speaker-card { display:grid; grid-template-columns:6rem 1fr; align-items:center; padding:.75rem; text-align:left; }
+      .speaker-photo { width:6rem; margin:0; }
+      .speaker-details { align-items:flex-start; padding:.4rem .5rem .4rem 1rem; }
+      .chair-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1.2rem .8rem; }
+      .chair-photo { width:5rem; }
+    }
+    @media print {
+      body { font-size:10.5pt; line-height:1.45; }
+      .wrap { width:100%; }
+      .masthead, .skip { display:none; }
+      main { padding:0; }
+      h1 { font-size:25pt; }
+      h2 { font-size:15pt; break-after:avoid; }
+      li, .slot, .speaker-card, .chair-card { break-inside:avoid; }
+      section + section { margin-top:1.5rem; }
+      a { color:inherit; }
+      .speaker-card { border:1px solid var(--line); box-shadow:none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to event information</a>
+  <header class="masthead">
+    <div class="wrap">
+      <div class="logos">
+        <a href="https://wun.ac.uk/research/responsible-ai-for-medical-decisions/" target="_blank" rel="noopener noreferrer"><img class="logo-wun" src="assets/logos/wun-logo.png" alt="Worldwide Universities Network: Responsible AI for Medical Decisions project page" width="860" height="220"></a>
+        <span class="divider" aria-hidden="true"></span>
+        <a href="https://conferences.miccai.org/2027/en/" target="_blank" rel="noopener noreferrer"><img class="logo-miccai" src="assets/logos/miccai2027-logo.webp" alt="MICCAI 2027 Auckland, New Zealand" width="1080" height="200"></a>
+      </div>
+      <nav aria-label="Page sections">
+        <a href="#programme">Programme</a>
+        <a href="#registration">Registration</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="main">
+    <section id="introduction" aria-labelledby="event-title">
+      <p class="eyebrow">Auckland · Thursday 26 November 2026</p>
+      <h1 id="event-title">WUN–MICCAI Joint Event</h1>
+      <p class="subtitle">Responsible AI for Medical Decisions</p>
+
+      <p>The one-day WUN–MICCAI joint event will be held in Auckland on Thursday 26 November 2026, bringing together the end-of-year workshop of the WUN project <em>Responsible AI for Medical Decisions</em> and the MICCAI local event. The event connects researchers, clinicians, students and practitioners working on medical image computing and responsible AI for healthcare. Both communities share a joint morning session and lunch, followed by separate afternoon programmes. </p>
+      <p><a href="https://wun.ac.uk/research/responsible-ai-for-medical-decisions/" target="_blank" rel="noopener noreferrer"><em>Responsible AI for Medical Decisions</em></a> is a research project supported by the <a href="https://wun.ac.uk/" target="_blank" rel="noopener noreferrer">Worldwide Universities Network (WUN)</a>. The project brings together researchers and collaborators across institutions to study human-in-the-loop explainable AI, multimodal medical imaging and report generation, and clinical decision support, with a focus on the transparency, safety, accountability and trustworthy adoption of AI in healthcare. The afternoon WUN session focuses on project updates and future collaboration.</p>
+      <p>The International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI) is the premier international conference in medical image computing and computer-assisted intervention. <strong><a href="https://conferences.miccai.org/2027/en/" target="_blank" rel="noopener noreferrer">MICCAI 2027</a>, the 30th MICCAI, will be held in Auckland, New Zealand, from 27 September to 1 October 2027.</strong> Ahead of the conference, the MICCAI local event brings together the medical imaging and medical AI community in Aotearoa New Zealand.</p>
+
+      We warmly invite you to join us!
+
+      <ul class="event-details">
+        <li><span class="emoji" aria-hidden="true">📅</span><span><strong>Date:</strong> Thursday 26 November 2026</span></li>
+        <li><span class="emoji" aria-hidden="true">⏰</span><span><strong>Time:</strong> 9:00 am – 5:00 pm (Auckland, New Zealand time)</span></li>
+        <li><span class="emoji" aria-hidden="true">📍</span><span><strong>Morning joint session:</strong> PLT1 Lecture Theatre (303-G20), 38 Princes Street, University of Auckland</span></li>
+        <li><span class="emoji" aria-hidden="true">📍</span><span><strong>Afternoon sessions:</strong> Venue to be confirmed</span></li>
+        <li><span class="emoji" aria-hidden="true">🍵</span><span><strong>Catering:</strong> Morning tea, light lunch and afternoon tea provided</span></li>
+        <li><span class="emoji" aria-hidden="true">👥</span><span><strong>Format:</strong> In person</span></li>
+      </ul>
+    </section>
+
+    <section id="programme" aria-labelledby="programme-heading">
+      <h2 id="programme-heading">Tentative programme</h2>
+      <p>The morning and lunch are shared by both events. In the afternoon, the WUN workshop and the MICCAI local event run separately. All times are in Auckland, New Zealand time.</p>
+
+      <div class="programme">
+        <span aria-hidden="true"></span>
+        <div class="lane-head wun">WUN workshop<small>Responsible AI for Medical Decisions</small></div>
+        <div class="lane-head miccai">MICCAI local event<small>Towards MICCAI 2027 in Auckland</small></div>
+
+        <div class="period"><strong>Morning · Joint session</strong><span>📍 PLT1 Lecture Theatre (303-G20), 38 Princes Street</span></div>
+
+        <div class="time">9:00–9:10 am</div>
+        <div class="slot joint span2 compact"><span class="tag">Joint</span><strong>Welcome and introduction</strong><span class="who">WUN and MICCAI organisers</span></div>
+
+        <div class="time">9:10–10:20 am</div>
+        <div class="slot miccai span2"><span class="tag">Joint · MICCAI talks</span><strong>MICCAI local event talks</strong><span class="who">MICCAI speakers, to be announced</span></div>
+
+        <div class="time">10:20–10:40 am</div>
+        <div class="slot break span2"><strong>☕ Morning tea</strong></div>
+
+        <div class="time">10:40–11:05 am</div>
+        <div class="slot wun span2"><span class="tag">Joint · WUN talks</span><strong>Invited Talk 1: TBD</strong><span class="who"><a href="https://www.diir.cuhk.edu.hk/staff/matthew-lun/" target="_blank" rel="noopener noreferrer">Dr. Matthew Lun Wong</a>, The Chinese University of Hong Kong</span></div>
+
+        <div class="time">11:05–11:30 am</div>
+        <div class="slot wun span2"><span class="tag">Joint · WUN talks</span><strong>Invited Talk 2: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/chris-paton" target="_blank" rel="noopener noreferrer">A/Prof. Chris Paton</a>, University of Auckland</span></div>
+
+        <div class="time">11:30–11:55 am</div>
+        <div class="slot wun span2"><span class="tag">Joint · WUN talks</span><strong>Invited Talk 3: TBD</strong><span class="who"><a href="https://experts.griffith.edu.au/7205-jun-zhou" target="_blank" rel="noopener noreferrer">Prof. Jun Zhou</a>, Griffith University</span></div>
+
+        <div class="time">11:55 am–12:00 pm</div>
+        <div class="slot joint span2 compact"><span class="tag">Joint</span><strong>Morning wrap-up</strong><span class="who">Arrangements for the afternoon sessions</span></div>
+
+        <div class="time">12:00–1:30 pm</div>
+        <div class="slot break span2"><strong>🥪 Lunch and Networking</strong><span class="who">Shared by participants of both events</span></div>
+
+        <div class="period"><strong>Afternoon · Separate sessions</strong><span>📍 Venues to be confirmed</span><span>🎤 WUN talks: 30 min + 10 min Q&amp;A</span></div>
+
+        <div class="time lane-time">From 1:30 pm</div>
+        <div class="lane">
+          <div class="slot wun"><span class="slot-time">1:30–2:10 pm</span><strong>CiteImpress: Cite, Then Summarize – Claim-Level Citation Training for Findings-to-Impression Generation</strong><span class="who">Jiajun Xiao, WUN project student</span></div>
+          <div class="slot wun"><span class="slot-time">2:10–2:50 pm</span><strong>Invited Talk: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/y-koh" target="_blank" rel="noopener noreferrer">Prof. Yun Sing Koh</a>, University of Auckland</span></div>
+          <div class="slot break"><span class="slot-time">2:50–3:20 pm</span><strong>☕ Afternoon tea</strong></div>
+          <div class="slot wun"><span class="slot-time">3:20–4:00 pm</span><strong>Invited Talk: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/j-zhao" target="_blank" rel="noopener noreferrer">A/Prof. Jichao Zhao</a>, University of Auckland</span></div>
+          <div class="slot wun"><span class="slot-time">4:00–4:40 pm</span><strong>Invited Talk: TBD</strong><span class="who"><a href="https://www.ece.ualberta.ca/~lcheng5/" target="_blank" rel="noopener noreferrer">Prof. Li Cheng</a>, University of Alberta</span></div>
+          <div class="slot wun"><span class="slot-time">4:40–5:00 pm</span><strong>Collaboration discussion and closing</strong><span class="desc">Joint papers, funding proposals, student exchanges and next steps</span></div>
+        </div>
+        <div class="lane">
+          <div class="slot miccai"><span class="slot-time">From 1:30 pm</span><strong>MICCAI local event afternoon programme</strong><span class="desc">Details to be announced by the MICCAI local organisers.</span></div>
+        </div>
+      </div>
+      <ul class="legend" aria-hidden="true">
+        <li><i style="background:var(--joint)"></i>Joint</li>
+        <li><i style="background:var(--wun-soft); border:1px solid var(--wun)"></i>WUN</li>
+        <li><i style="background:var(--miccai-soft); border:1px solid var(--miccai)"></i>MICCAI</li>
+        <li><i style="background:var(--break)"></i>Catering</li>
+      </ul>
+      <p class="note">The programme is provisional and may change as speakers and talk titles are confirmed.</p>
+    </section>
+
+    <section id="speakers" aria-labelledby="speakers-heading">
+      <h2 id="speakers-heading">WUN speakers</h2>
+      <h3>Morning invited talks</h3>
+      <ul class="speaker-grid">
+        <li>
+          <a class="speaker-card" href="https://www.diir.cuhk.edu.hk/staff/matthew-lun/" target="_blank" rel="noopener noreferrer" aria-label="View Matthew Lun Wong’s profile page">
+            <div class="speaker-photo"><img src="assets/speakers/matthew-lun-wong.jpg" alt="Matthew Lun Wong" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Research Assistant Professor</span><h3 class="speaker-name">Matthew Lun Wong</h3><p class="speaker-affiliation">Department of Imaging and Interventional Radiology, The Chinese University of Hong Kong</p></div>
+          </a>
+        </li>
+        <li>
+          <a class="speaker-card" href="https://profiles.auckland.ac.nz/chris-paton" target="_blank" rel="noopener noreferrer" aria-label="View Chris Paton’s profile page">
+            <div class="speaker-photo"><img src="assets/speakers/chris-paton.jpg" alt="Chris Paton" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Associate Professor</span><h3 class="speaker-name">Chris Paton</h3><p class="speaker-affiliation">Liggins Institute, University of Auckland</p></div>
+          </a>
+        </li>
+        <li>
+          <a class="speaker-card" href="https://experts.griffith.edu.au/7205-jun-zhou" target="_blank" rel="noopener noreferrer" aria-label="View Jun Zhou’s profile page">
+            <div class="speaker-photo"><img src="assets/speakers/jun-zhou.jpg" alt="Jun Zhou" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Professor</span><h3 class="speaker-name">Jun Zhou</h3><p class="speaker-affiliation">School of Information and Communication Technology, Griffith University</p></div>
+          </a>
+        </li>
+      </ul>
+      <h3>Afternoon talks</h3>
+      <ul class="speaker-grid">
+        <li>
+          <div class="speaker-card">
+            <div class="speaker-photo"><span class="initials" aria-hidden="true">JX</span></div>
+            <div class="speaker-details"><span class="speaker-role">PhD Student</span><h3 class="speaker-name">Jiajun Xiao</h3><p class="speaker-affiliation">WUN project</p></div>
+          </div>
+        </li>
+        <li>
+          <a class="speaker-card" href="https://profiles.auckland.ac.nz/y-koh" target="_blank" rel="noopener noreferrer" aria-label="View Yun Sing Koh’s profile page">
+            <div class="speaker-photo"><img src="assets/speakers/yun-sing-koh.jpg" alt="Yun Sing Koh" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Professor</span><h3 class="speaker-name">Yun Sing Koh</h3><p class="speaker-affiliation">School of Computer Science, University of Auckland</p></div>
+          </a>
+        </li>
+        <li>
+          <a class="speaker-card" href="https://profiles.auckland.ac.nz/j-zhao" target="_blank" rel="noopener noreferrer" aria-label="View Jichao Zhao’s profile page">
+            <div class="speaker-photo"><img src="assets/speakers/jichao-zhao.jpg" alt="Jichao Zhao" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Associate Professor</span><h3 class="speaker-name">Jichao Zhao</h3><p class="speaker-affiliation">Auckland Bioengineering Institute, University of Auckland</p></div>
+          </a>
+        </li>
+        <li>
+          <a class="speaker-card" href="https://www.ece.ualberta.ca/~lcheng5/" target="_blank" rel="noopener noreferrer" aria-label="View Li Cheng’s profile page">
+            <div class="speaker-photo"><img src="assets/speakers/li-cheng.jpg" alt="Li Cheng" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Professor</span><h3 class="speaker-name">Li Cheng</h3><p class="speaker-affiliation">Department of Electrical and Computer Engineering, University of Alberta</p></div>
+          </a>
+        </li>
+      </ul>
+      <p class="note">Speakers for the MICCAI session will be announced by the MICCAI local organisers.</p>
+    </section>
+
+    <section id="registration" aria-labelledby="registration-heading">
+      <h2 id="registration-heading">Registration</h2>
+      <p>Attendance is free, but registration is required so that we can plan catering and room capacity. Please complete the <a href="https://forms.gle/Ne6LEWzxedFqY4QDA" target="_blank" rel="noopener noreferrer">registration form</a> by <strong>Friday 20 November 2026</strong> and let us know about any dietary requirements.</p>
+      <p>Participants registered for the MICCAI local event are welcome at the joint morning session and lunch. If you also plan to attend the WUN afternoon session, please register using the form above.</p>
+    </section>
+
+    <section id="organisers" aria-labelledby="organisers-heading">
+      <h2 id="organisers-heading">Organisers</h2>
+      <ul class="chair-grid">
+        <li>
+          <a class="chair-card" href="https://zhangxinyu-xyz.github.io/" target="_blank" rel="noopener noreferrer" aria-label="View Xinyu Zhang’s homepage">
+            <div class="chair-photo"><img src="assets/chairs/xinyu-zhang.jpg" alt="Xinyu Zhang" width="180" height="180" loading="lazy" decoding="async"></div>
+            <h3 class="chair-name">Xinyu Zhang</h3>
+            <p class="chair-affiliation">University of Auckland</p>
+          </a>
+        </li>
+        <li>
+          <a class="chair-card" href="https://profiles.auckland.ac.nz/j-zhao" target="_blank" rel="noopener noreferrer" aria-label="View Jichao Zhao’s profile page">
+            <div class="chair-photo"><img src="assets/chairs/jichao-zhao.jpg" alt="Jichao Zhao" width="180" height="180" loading="lazy" decoding="async"></div>
+            <h3 class="chair-name">Jichao Zhao</h3>
+            <p class="chair-affiliation">University of Auckland</p>
+          </a>
+        </li>
+      </ul>
+      <p>For enquiries, please contact Xinyu Zhang (<a href="mailto:xinyu.zhang@auckland.ac.nz">xinyu.zhang@auckland.ac.nz</a>) or Jichao Zhao (<a href="mailto:j.zhao@auckland.ac.nz">j.zhao@auckland.ac.nz</a>).</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>WUN–MICCAI Joint Event · Responsible AI for Medical Decisions · Auckland, New Zealand · 26 November 2026</p>
+      <p>Supported by the <a href="https://wun.ac.uk/research/responsible-ai-for-medical-decisions/" target="_blank" rel="noopener noreferrer">Worldwide Universities Network (WUN)</a>, held jointly with the MICCAI local event ahead of <a href="https://conferences.miccai.org/2027/en/" target="_blank" rel="noopener noreferrer">MICCAI 2027</a>.</p>
+    </div>
+  </footer>
+  <!-- Still to confirm: afternoon venues, registration form link and deadline, MICCAI talk details,
+       speaker affiliations/photos/titles, other organisers. -->
+</body>
+</html>
