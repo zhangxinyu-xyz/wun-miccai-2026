@@ -67,9 +67,10 @@
     .slot.wun { background:var(--wun-soft); color:var(--wun); border-left:4px solid var(--wun); }
     .slot.miccai { background:var(--miccai-soft); color:var(--miccai); border-left:4px solid var(--miccai); }
     .slot.break { background:var(--break); color:var(--break-ink); }
-    .lane { display:flex; flex-direction:column; gap:.5rem; }
-    .lane .slot-time { display:block; font-size:.8125rem; font-weight:700; letter-spacing:.02em; font-variant-numeric:tabular-nums; margin-bottom:.15rem; }
-    .lane .slot.miccai { flex:1; }
+    .lanes { grid-column:2 / span 2; display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+    .lanes > .slot { grid-column:1; }
+    .lanes > .slot.miccai { grid-column:2; grid-row:1 / span 2; }
+    .lanes .slot-time { display:block; font-size:.8125rem; font-weight:700; letter-spacing:.02em; font-variant-numeric:tabular-nums; margin-bottom:.15rem; }
     .tag { display:inline-block; margin-bottom:.3rem; padding:.05rem .5rem; border-radius:.3rem; font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; background:rgba(255,255,255,.7); }
     .legend { display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; font-size:.875rem; color:var(--muted); margin:.4rem 0 0; padding:0; list-style:none; }
     .legend li { margin:0; display:flex; align-items:center; gap:.45rem; }
@@ -78,6 +79,10 @@
     /* Speakers */
     .speaker-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:1.1rem; padding:0; margin:1.2rem 0; list-style:none; }
     .speaker-grid li { min-width:0; margin:0; padding:0; }
+    .speaker-grid .featured { grid-column:1 / -1; }
+    .speaker-card.keynote { display:grid; grid-template-columns:9rem 1fr; align-items:center; gap:0 1.8rem; padding:1.2rem 1.8rem; text-align:left; }
+    .speaker-card.keynote .speaker-photo { margin:0; }
+    .speaker-card.keynote .speaker-details { align-items:flex-start; padding:0; }
     .speaker-grid .speaker-name { font-size:1.125rem; }
     #speakers h3:not(.speaker-name) { margin:1.4rem 0 0; }
     .speaker-card { display:flex; flex-direction:column; height:100%; padding:1rem; overflow:hidden; color:var(--ink); background:#f3f5f7; border:1px solid transparent; border-radius:1rem; text-align:center; text-decoration:none; transition:transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease; }
@@ -106,6 +111,9 @@
     footer { border-top:1px solid var(--line); padding-block:1.7rem; color:var(--muted); font-size:.875rem; }
     footer p { margin:0; }
     footer p + p { margin-top:.4rem; }
+    .fn-mark { color:inherit; text-decoration:none; }
+    .fn-mark:hover { text-decoration:underline; }
+    footer .footnote { margin-top:1rem; padding-top:.8rem; border-top:1px dashed var(--line); font-size:.8125rem; }
 
     @media (max-width:860px) {
       .speaker-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
@@ -125,9 +133,12 @@
       .time { font-size:.8125rem; }
       .slot { padding:.6rem .7rem; font-size:.9375rem; }
       .slot .who { font-size:.875rem; }
-      .programme .lane { grid-column:1 / -1; }
+      .programme .lanes { grid-column:1 / -1; grid-template-columns:1fr; gap:.4rem; }
+      .lanes > .slot.miccai { grid-column:1; grid-row:auto; }
       .programme .lane-time { display:none; }
       .speaker-grid { grid-template-columns:1fr; gap:1rem; }
+      .speaker-card.keynote { grid-template-columns:6rem 1fr; gap:0; padding:.75rem; }
+      .speaker-card.keynote .speaker-details { padding:.4rem .5rem .4rem 1rem; }
       .speaker-card { display:grid; grid-template-columns:6rem 1fr; align-items:center; padding:.75rem; text-align:left; }
       .speaker-photo { width:6rem; margin:0; }
       .speaker-details { align-items:flex-start; padding:.4rem .5rem .4rem 1rem; }
@@ -167,12 +178,12 @@
   <main class="wrap" id="main">
     <section id="introduction" aria-labelledby="event-title">
       <p class="eyebrow">Auckland · Thursday 26 November 2026</p>
-      <h1 id="event-title">WUN–MICCAI Joint Event</h1>
+      <h1 id="event-title">WUN–MICCAI<a class="fn-mark" href="#miccai-note" title="Note on the use of the MICCAI name">*</a> Joint Event</h1>
       <p class="subtitle">Responsible AI for Medical Decisions</p>
 
-      <p>The one-day WUN–MICCAI joint event will be held in Auckland on Thursday 26 November 2026, bringing together the end-of-year workshop of the WUN project <em>Responsible AI for Medical Decisions</em> and the MICCAI local event. The event connects researchers, clinicians, students and practitioners working on medical image computing and responsible AI for healthcare. Both communities share a joint morning session and lunch, followed by separate afternoon programmes. </p>
+      <p>The one-day WUN–MICCAI* joint event will be held in Auckland on Thursday 26 November 2026, bringing together the end-of-year workshop of the WUN project <em>Responsible AI for Medical Decisions</em> and a talk session organised by the MICCAI 2027 Local Organising Committee. The event connects researchers, clinicians, students and practitioners working on medical image computing and responsible AI for healthcare. Both communities share a joint morning session and lunch, followed by separate afternoon programmes. </p>
       <p><a href="https://wun.ac.uk/research/responsible-ai-for-medical-decisions/" target="_blank" rel="noopener noreferrer"><em>Responsible AI for Medical Decisions</em></a> is a research project supported by the <a href="https://wun.ac.uk/" target="_blank" rel="noopener noreferrer">Worldwide Universities Network (WUN)</a>. The project brings together researchers and collaborators across institutions to study human-in-the-loop explainable AI, multimodal medical imaging and report generation, and clinical decision support, with a focus on the transparency, safety, accountability and trustworthy adoption of AI in healthcare. The afternoon WUN session focuses on project updates and future collaboration.</p>
-      <p>The International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI) is the premier international conference in medical image computing and computer-assisted intervention. <strong><a href="https://conferences.miccai.org/2027/en/" target="_blank" rel="noopener noreferrer">MICCAI 2027</a>, the 30th MICCAI, will be held in Auckland, New Zealand, from 27 September to 1 October 2027.</strong> Ahead of the conference, the MICCAI local event brings together the medical imaging and medical AI community in Aotearoa New Zealand.</p>
+      <p>The International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI) is the premier international conference in medical image computing and computer-assisted intervention. <strong><a href="https://conferences.miccai.org/2027/en/" target="_blank" rel="noopener noreferrer">MICCAI 2027</a>, the 30th MICCAI, will be held in Auckland, New Zealand, from 27 September to 1 October 2027.</strong> Ahead of the conference, the MICCAI 2027 Local Organising Committee brings together the medical imaging and medical AI community in Aotearoa New Zealand for a talk session on research relevant to MICCAI and a discussion of initiatives related to MICCAI 2027.</p>
 
       We warmly invite you to join us!
 
@@ -180,7 +191,8 @@
         <li><span class="emoji" aria-hidden="true">📅</span><span><strong>Date:</strong> Thursday 26 November 2026</span></li>
         <li><span class="emoji" aria-hidden="true">⏰</span><span><strong>Time:</strong> 9:00 am – 5:00 pm (Auckland, New Zealand time)</span></li>
         <li><span class="emoji" aria-hidden="true">📍</span><span><strong>Morning joint session:</strong> PLT1 Lecture Theatre (303-G20), 38 Princes Street, University of Auckland</span></li>
-        <li><span class="emoji" aria-hidden="true">📍</span><span><strong>Afternoon sessions:</strong> Venue to be confirmed</span></li>
+        <li><span class="emoji" aria-hidden="true">📍</span><span><strong>MICCAI discussion session (12:30–2:00 pm):</strong> Level 9, 70 Symonds Street, Auckland</span></li>
+        <li><span class="emoji" aria-hidden="true">📍</span><span><strong>WUN afternoon session:</strong> Venue to be confirmed</span></li>
         <li><span class="emoji" aria-hidden="true">🍵</span><span><strong>Catering:</strong> Morning tea, light lunch and afternoon tea provided</span></li>
         <li><span class="emoji" aria-hidden="true">👥</span><span><strong>Format:</strong> In person</span></li>
       </ul>
@@ -188,52 +200,64 @@
 
     <section id="programme" aria-labelledby="programme-heading">
       <h2 id="programme-heading">Tentative programme</h2>
-      <p>The morning and lunch are shared by both events. In the afternoon, the WUN workshop and the MICCAI local event run separately. All times are in Auckland, New Zealand time.</p>
+      <p>The morning session and lunch are shared by both events. From 12:30 pm, the WUN workshop and the MICCAI session run separately. All times are in Auckland, New Zealand time.</p>
 
       <div class="programme">
         <span aria-hidden="true"></span>
         <div class="lane-head wun">WUN workshop<small>Responsible AI for Medical Decisions</small></div>
-        <div class="lane-head miccai">MICCAI local event<small>Towards MICCAI 2027 in Auckland</small></div>
+        <div class="lane-head miccai">MICCAI session<small>MICCAI 2027 Local Organising Committee</small></div>
 
         <div class="period"><strong>Morning · Joint session</strong><span>📍 PLT1 Lecture Theatre (303-G20), 38 Princes Street</span></div>
 
         <div class="time">9:00–9:10 am</div>
-        <div class="slot joint span2 compact"><span class="tag">Joint</span><strong>Welcome and introduction</strong><span class="who">WUN and MICCAI organisers</span></div>
+        <div class="slot joint span2 compact"><span class="tag">Joint</span><strong>Welcome and introduction</strong><span class="who">WUN and MICCAI 2027 local organisers</span></div>
 
-        <div class="time">9:10–10:20 am</div>
-        <div class="slot miccai span2"><span class="tag">Joint · MICCAI talks</span><strong>MICCAI local event talks</strong><span class="who">MICCAI speakers, to be announced</span></div>
+        <div class="time">9:10–9:35 am</div>
+        <div class="slot miccai span2"><span class="tag">Joint · MICCAI keynote</span><strong>Verification AI Judge Models for Correcting Chest X-ray Radiology Reports</strong><span class="who"><a href="https://profiles.stanford.edu/tanveer-syeda" target="_blank" rel="noopener noreferrer">Prof. Tanveer Fathima Syeda-Mahmood</a>, Stanford University</span></div>
+
+        <div class="time">9:35–9:50 am</div>
+        <div class="slot miccai span2"><span class="tag">Joint · MICCAI talks</span><strong>Interpretability-Guided Bias Mitigation in Skin Image Classification</strong><span class="who"><a href="https://research.unsw.edu.au/people/associate-professor-yang-song" target="_blank" rel="noopener noreferrer">A/Prof. Yang Song</a>, University of New South Wales</span><span class="desc">Presented online via Zoom</span></div>
+
+        <div class="time">9:50–10:00 am</div>
+        <div class="slot miccai span2"><span class="tag">Joint · MICCAI talks</span><strong>Talk: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/hayley-reynolds" target="_blank" rel="noopener noreferrer">Dr. Hayley Reynolds</a>, Auckland Bioengineering Institute, University of Auckland</span></div>
+
+        <div class="time">10:00–10:10 am</div>
+        <div class="slot miccai span2"><span class="tag">Joint · MICCAI talks</span><strong>AI-Driven Neurosurgery and Neuroscience: From New Zealand to the World</strong><span class="who"><a href="https://profiles.auckland.ac.nz/h-abbasi" target="_blank" rel="noopener noreferrer">Dr. Hamid Abbasi</a>, Advanced NeuroTech Lab, University of Auckland</span></div>
+
+        <div class="time">10:10–10:20 am</div>
+        <div class="slot miccai span2"><span class="tag">Joint · MICCAI talks</span><strong>From Biosignals to Clinical Insights: The Role of Intelligent Systems in Mental Health</strong><span class="who">Dr. Fatemeh Esmaeili, University of Auckland</span></div>
 
         <div class="time">10:20–10:40 am</div>
         <div class="slot break span2"><strong>☕ Morning tea</strong></div>
 
         <div class="time">10:40–11:05 am</div>
-        <div class="slot wun span2"><span class="tag">Joint · WUN talks</span><strong>Invited Talk 1: TBD</strong><span class="who"><a href="https://www.diir.cuhk.edu.hk/staff/matthew-lun/" target="_blank" rel="noopener noreferrer">Dr. Matthew Lun Wong</a>, The Chinese University of Hong Kong</span></div>
+        <div class="slot wun span2"><span class="tag">Joint · WUN invited talks</span><strong>Talk: TBD</strong><span class="who"><a href="https://www.diir.cuhk.edu.hk/staff/matthew-lun/" target="_blank" rel="noopener noreferrer">Dr. Matthew Lun Wong</a>, The Chinese University of Hong Kong</span></div>
 
         <div class="time">11:05–11:30 am</div>
-        <div class="slot wun span2"><span class="tag">Joint · WUN talks</span><strong>Invited Talk 2: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/chris-paton" target="_blank" rel="noopener noreferrer">A/Prof. Chris Paton</a>, University of Auckland</span></div>
+        <div class="slot wun span2"><span class="tag">Joint · WUN invited talks</span><strong>Talk: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/chris-paton" target="_blank" rel="noopener noreferrer">A/Prof. Chris Paton</a>, University of Auckland</span></div>
 
         <div class="time">11:30–11:55 am</div>
-        <div class="slot wun span2"><span class="tag">Joint · WUN talks</span><strong>Invited Talk 3: TBD</strong><span class="who"><a href="https://experts.griffith.edu.au/7205-jun-zhou" target="_blank" rel="noopener noreferrer">Prof. Jun Zhou</a>, Griffith University</span></div>
+        <div class="slot wun span2"><span class="tag">Joint · WUN invited talks</span><strong>Talk: TBD</strong><span class="who"><a href="https://experts.griffith.edu.au/7205-jun-zhou" target="_blank" rel="noopener noreferrer">Prof. Jun Zhou</a>, Griffith University</span></div>
 
         <div class="time">11:55 am–12:00 pm</div>
         <div class="slot joint span2 compact"><span class="tag">Joint</span><strong>Morning wrap-up</strong><span class="who">Arrangements for the afternoon sessions</span></div>
 
-        <div class="time">12:00–1:30 pm</div>
+        <div class="time">12:00–12:30 pm</div>
         <div class="slot break span2"><strong>🥪 Lunch and Networking</strong><span class="who">Shared by participants of both events</span></div>
 
-        <div class="period"><strong>Afternoon · Separate sessions</strong><span>📍 Venues to be confirmed</span><span>🎤 WUN talks: 30 min + 10 min Q&amp;A</span></div>
+        <div class="period"><strong>Afternoon · Separate sessions</strong><span>📍 WUN: venue to be confirmed</span><span>📍 MICCAI: Level 9, 70 Symonds Street</span></div>
 
-        <div class="time lane-time">From 1:30 pm</div>
-        <div class="lane">
-          <div class="slot wun"><span class="slot-time">1:30–2:10 pm</span><strong>CiteImpress: Cite, Then Summarize – Claim-Level Citation Training for Findings-to-Impression Generation</strong><span class="who">Jiajun Xiao, WUN project student</span></div>
-          <div class="slot wun"><span class="slot-time">2:10–2:50 pm</span><strong>Invited Talk: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/y-koh" target="_blank" rel="noopener noreferrer">Prof. Yun Sing Koh</a>, University of Auckland</span></div>
-          <div class="slot break"><span class="slot-time">2:50–3:20 pm</span><strong>☕ Afternoon tea</strong></div>
-          <div class="slot wun"><span class="slot-time">3:20–4:00 pm</span><strong>Invited Talk: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/j-zhao" target="_blank" rel="noopener noreferrer">A/Prof. Jichao Zhao</a>, University of Auckland</span></div>
-          <div class="slot wun"><span class="slot-time">4:00–4:40 pm</span><strong>Invited Talk: TBD</strong><span class="who"><a href="https://www.ece.ualberta.ca/~lcheng5/" target="_blank" rel="noopener noreferrer">Prof. Li Cheng</a>, University of Alberta</span></div>
-          <div class="slot wun"><span class="slot-time">4:40–5:00 pm</span><strong>Collaboration discussion and closing</strong><span class="desc">Joint papers, funding proposals, student exchanges and next steps</span></div>
-        </div>
-        <div class="lane">
-          <div class="slot miccai"><span class="slot-time">From 1:30 pm</span><strong>MICCAI local event afternoon programme</strong><span class="desc">Details to be announced by the MICCAI local organisers.</span></div>
+        <div class="time lane-time">From 12:30 pm</div>
+        <div class="lanes">
+          <div class="slot break"><span class="slot-time">12:30–1:30 pm</span><strong>🥪 Lunch and Networking (continued)</strong></div>
+          <div class="slot wun"><span class="tag">WUN talks</span><span class="slot-time">1:30–2:00 pm</span><strong>CiteImpress: Cite, Then Summarize – Claim-Level Citation Training for Findings-to-Impression Generation</strong><span class="who">Jiajun Xiao, WUN project student</span></div>
+          <div class="slot wun"><span class="tag">WUN invited talks</span><span class="slot-time">2:00–2:30 pm</span><strong>Talk: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/y-koh" target="_blank" rel="noopener noreferrer">Prof. Yun Sing Koh</a>, University of Auckland</span></div>
+          <div class="slot break"><span class="slot-time">2:30–3:00 pm</span><strong>☕ Afternoon tea</strong></div>
+          <div class="slot wun"><span class="tag">WUN invited talks</span><span class="slot-time">3:00–3:30 pm</span><strong>Talk: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/j-zhao" target="_blank" rel="noopener noreferrer">A/Prof. Jichao Zhao</a>, University of Auckland</span></div>
+          <div class="slot wun"><span class="tag">WUN invited talks</span><span class="slot-time">3:30–4:00 pm</span><strong>Talk: TBD</strong><span class="who"><a href="https://www.ece.ualberta.ca/~lcheng5/" target="_blank" rel="noopener noreferrer">Prof. Li Cheng</a>, University of Alberta</span></div>
+          <div class="slot wun"><span class="tag">WUN invited talks</span><span class="slot-time">4:00–4:30 pm</span><strong>Talk: TBD</strong><span class="who"><a href="https://research.unsw.edu.au/people/dr-dong-gong" target="_blank" rel="noopener noreferrer">Dr. Dong Gong</a>, University of New South Wales</span></div>
+          <div class="slot wun"><span class="slot-time">4:30–5:00 pm</span><strong>Collaboration discussion and closing</strong><span class="desc">Joint papers, funding proposals, student exchanges and next steps</span></div>
+          <div class="slot miccai"><span class="slot-time">12:30–2:00 pm</span><strong>MICCAI 2027 discussion session</strong><span class="desc">A short, informative meeting on initiatives related to MICCAI 2027</span><span class="who">📍 Level 9, 70 Symonds Street</span></div>
         </div>
       </div>
       <ul class="legend" aria-hidden="true">
@@ -246,8 +270,41 @@
     </section>
 
     <section id="speakers" aria-labelledby="speakers-heading">
-      <h2 id="speakers-heading">WUN speakers</h2>
-      <h3>Morning invited talks</h3>
+      <h2 id="speakers-heading">Speakers</h2>
+      <h3>MICCAI session</h3>
+      <ul class="speaker-grid">
+        <li class="featured">
+          <a class="speaker-card keynote" href="https://profiles.stanford.edu/tanveer-syeda" target="_blank" rel="noopener noreferrer" aria-label="View Tanveer Fathima Syeda-Mahmood’s profile page">
+            <div class="speaker-photo"><img src="assets/speakers/tanveer-syeda-mahmood.jpg" alt="Tanveer Fathima Syeda-Mahmood" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Keynote speaker · Adjunct Professor</span><h3 class="speaker-name">Tanveer Fathima Syeda-Mahmood</h3><p class="speaker-affiliation">Department of Biomedical Data Science, Stanford University</p></div>
+          </a>
+        </li>
+        <li>
+          <a class="speaker-card" href="https://research.unsw.edu.au/people/associate-professor-yang-song" target="_blank" rel="noopener noreferrer" aria-label="View Yang Song’s profile page">
+            <div class="speaker-photo"><img src="assets/speakers/yang-song.jpg" alt="Yang Song" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Associate Professor</span><h3 class="speaker-name">Yang Song</h3><p class="speaker-affiliation">School of Computer Science and Engineering, University of New South Wales</p></div>
+          </a>
+        </li>
+        <li>
+          <a class="speaker-card" href="https://profiles.auckland.ac.nz/hayley-reynolds" target="_blank" rel="noopener noreferrer" aria-label="View Hayley Reynolds’s profile page">
+            <div class="speaker-photo"><img src="assets/speakers/hayley-reynolds.jpg" alt="Hayley Reynolds" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Senior Research Fellow</span><h3 class="speaker-name">Hayley Reynolds</h3><p class="speaker-affiliation">Auckland Bioengineering Institute, University of Auckland</p></div>
+          </a>
+        </li>
+        <li>
+          <a class="speaker-card" href="https://profiles.auckland.ac.nz/h-abbasi" target="_blank" rel="noopener noreferrer" aria-label="View Hamid Abbasi’s profile page">
+            <div class="speaker-photo"><img src="assets/speakers/hamid-abbasi.jpg" alt="Hamid Abbasi" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Senior Research Fellow</span><h3 class="speaker-name">Hamid Abbasi</h3><p class="speaker-affiliation">Advanced NeuroTech Lab, University of Auckland</p></div>
+          </a>
+        </li>
+        <li>
+          <div class="speaker-card">
+            <div class="speaker-photo"><img src="assets/speakers/fatemeh-esmaeili.jpg" alt="Fatemeh Esmaeili" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Research Fellow</span><h3 class="speaker-name">Fatemeh Esmaeili</h3><p class="speaker-affiliation">University of Auckland</p></div>
+          </div>
+        </li>
+      </ul>
+      <h3>WUN workshop</h3>
       <ul class="speaker-grid">
         <li>
           <a class="speaker-card" href="https://www.diir.cuhk.edu.hk/staff/matthew-lun/" target="_blank" rel="noopener noreferrer" aria-label="View Matthew Lun Wong’s profile page">
@@ -267,9 +324,6 @@
             <div class="speaker-details"><span class="speaker-role">Professor</span><h3 class="speaker-name">Jun Zhou</h3><p class="speaker-affiliation">School of Information and Communication Technology, Griffith University</p></div>
           </a>
         </li>
-      </ul>
-      <h3>Afternoon talks</h3>
-      <ul class="speaker-grid">
         <li>
           <div class="speaker-card">
             <div class="speaker-photo"><span class="initials" aria-hidden="true">JX</span></div>
@@ -294,14 +348,19 @@
             <div class="speaker-details"><span class="speaker-role">Professor</span><h3 class="speaker-name">Li Cheng</h3><p class="speaker-affiliation">Department of Electrical and Computer Engineering, University of Alberta</p></div>
           </a>
         </li>
+        <li>
+          <a class="speaker-card" href="https://research.unsw.edu.au/people/dr-dong-gong" target="_blank" rel="noopener noreferrer" aria-label="View Dong Gong’s profile page">
+            <div class="speaker-photo"><img src="assets/speakers/dong-gong.jpg" alt="Dong Gong" width="320" height="320" loading="lazy" decoding="async"></div>
+            <div class="speaker-details"><span class="speaker-role">Senior Lecturer</span><h3 class="speaker-name">Dong Gong</h3><p class="speaker-affiliation">School of Computer Science and Engineering, University of New South Wales</p></div>
+          </a>
+        </li>
       </ul>
-      <p class="note">Speakers for the MICCAI session will be announced by the MICCAI local organisers.</p>
     </section>
 
     <section id="registration" aria-labelledby="registration-heading">
       <h2 id="registration-heading">Registration</h2>
       <p>Attendance is free, but registration is required so that we can plan catering and room capacity. Please complete the <a href="https://forms.gle/Ne6LEWzxedFqY4QDA" target="_blank" rel="noopener noreferrer">registration form</a> by <strong>Friday 20 November 2026</strong> and let us know about any dietary requirements.</p>
-      <p>Participants registered for the MICCAI local event are welcome at the joint morning session and lunch. If you also plan to attend the WUN afternoon session, please register using the form above.</p>
+      <p>Participants registered for the MICCAI session are welcome at the joint morning session and lunch. If you also plan to attend the WUN afternoon session, please register using the form above.</p>
     </section>
 
     <section id="organisers" aria-labelledby="organisers-heading">
@@ -328,11 +387,12 @@
 
   <footer>
     <div class="wrap">
-      <p>WUN–MICCAI Joint Event · Responsible AI for Medical Decisions · Auckland, New Zealand · 26 November 2026</p>
-      <p>Supported by the <a href="https://wun.ac.uk/research/responsible-ai-for-medical-decisions/" target="_blank" rel="noopener noreferrer">Worldwide Universities Network (WUN)</a>, held jointly with the MICCAI local event ahead of <a href="https://conferences.miccai.org/2027/en/" target="_blank" rel="noopener noreferrer">MICCAI 2027</a>.</p>
+      <p>WUN–MICCAI* Joint Event · Responsible AI for Medical Decisions · Auckland, New Zealand · 26 November 2026</p>
+      <p>Supported by the <a href="https://wun.ac.uk/research/responsible-ai-for-medical-decisions/" target="_blank" rel="noopener noreferrer">Worldwide Universities Network (WUN)</a> and the <a href="https://ml4sg.auckland.ac.nz/" target="_blank" rel="noopener noreferrer">Centre of Machine Learning for Social Good (ML4SG)</a>, University of Auckland. Held jointly with the MICCAI 2027 Local Organising Committee ahead of <a href="https://conferences.miccai.org/2027/en/" target="_blank" rel="noopener noreferrer">MICCAI 2027</a>.</p>
+      <p class="footnote" id="miccai-note">*In this context, MICCAI refers to the MICCAI 2027 Local Organising Committee organising a talk session on research relevant to MICCAI and discussing initiatives related to MICCAI 2027.</p>
     </div>
   </footer>
-  <!-- Still to confirm: afternoon venues, registration form link and deadline, MICCAI talk details,
-       speaker affiliations/photos/titles, other organisers. -->
+  <!-- Still to confirm: WUN afternoon venue, WUN talk titles, Hayley Reynolds talk title,
+       Fatemeh Esmaeili photo/profile link (photo from Google Scholar, low resolution), other organisers. -->
 </body>
 </html>
