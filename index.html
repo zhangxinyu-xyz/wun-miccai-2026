@@ -58,6 +58,14 @@
     .slot strong { display:block; }
     .slot .who { display:block; margin-top:.2rem; font-size:.9375rem; }
     .slot .desc { display:block; margin-top:.2rem; font-size:.875rem; opacity:.85; }
+    .slot .abstract { margin-top:.35rem; font-size:.875rem; }
+    .slot .abstract summary { display:inline-flex; align-items:center; gap:.3rem; padding:.05rem .55rem .05rem .4rem; border:1px solid currentColor; border-radius:.3rem; font-weight:700; cursor:pointer; list-style:none; }
+    .slot .abstract summary::-webkit-details-marker { display:none; }
+    .slot .abstract summary::before { content:"▸"; transition:transform .15s ease; }
+    .slot .abstract[open] summary::before { transform:rotate(90deg); }
+    .slot .abstract summary:hover { background:rgba(255,255,255,.7); }
+    .slot .abstract summary:focus-visible { outline:3px solid #ab5a00; outline-offset:3px; }
+    .slot .abstract p { margin:.45rem 0 .1rem; color:var(--ink); line-height:1.6; }
     .span2 { grid-column:span 2; }
     .slot.compact { display:flex; flex-wrap:wrap; align-items:center; gap:.15rem .7rem; padding-block:.5rem; }
     .slot.compact .tag { margin-bottom:0; }
@@ -105,6 +113,7 @@
     .chair-card:focus-visible { outline:3px solid #ab5a00; outline-offset:4px; }
     .chair-photo { width:5.5rem; max-width:100%; aspect-ratio:1; overflow:hidden; background:#eef2f7; border-radius:50%; display:grid; place-items:center; }
     .chair-photo img { display:block; width:100%; height:100%; object-fit:cover; }
+    .chair-photo.wordmark { background:var(--navy); color:#fff; font-size:1.15rem; font-weight:700; letter-spacing:.03em; }
     .chair-name { margin:.6rem 0 0; color:var(--navy); font-size:1rem; line-height:1.35; }
     .chair-affiliation { margin:.2rem 0 0; color:#374457; font-size:.875rem; line-height:1.45; }
 
@@ -252,9 +261,9 @@
           <div class="slot break"><span class="slot-time">12:30–1:30 pm</span><strong>🥪 Lunch and Networking (continued)</strong></div>
           <div class="slot wun"><span class="tag">WUN talks</span><span class="slot-time">1:30–2:00 pm</span><strong>CiteImpress: Cite, Then Summarize – Claim-Level Citation Training for Findings-to-Impression Generation</strong><span class="who"><a href="https://profiles.auckland.ac.nz/jiajun-xiao" target="_blank" rel="noopener noreferrer">Jiajun Xiao</a>, WUN project student</span></div>
           <div class="slot wun"><span class="tag">WUN invited talks</span><span class="slot-time">2:00–2:30 pm</span><strong>Talk: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/y-koh" target="_blank" rel="noopener noreferrer">Prof. Yun Sing Koh</a>, University of Auckland</span></div>
-          <div class="slot break"><span class="slot-time">2:30–3:00 pm</span><strong>☕ Afternoon tea</strong></div>
-          <div class="slot wun"><span class="tag">WUN invited talks</span><span class="slot-time">3:00–3:30 pm</span><strong>Talk: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/j-zhao" target="_blank" rel="noopener noreferrer">A/Prof. Jichao Zhao</a>, University of Auckland</span></div>
-          <div class="slot wun"><span class="tag">WUN invited talks</span><span class="slot-time">3:30–4:00 pm</span><strong>Talk: TBD</strong><span class="who"><a href="https://www.ece.ualberta.ca/~lcheng5/" target="_blank" rel="noopener noreferrer">Prof. Li Cheng</a>, University of Alberta</span></div>
+          <div class="slot wun"><span class="tag">WUN invited talks</span><span class="slot-time">2:30–3:00 pm</span><strong>Talk: TBD</strong><span class="who"><a href="https://profiles.auckland.ac.nz/j-zhao" target="_blank" rel="noopener noreferrer">A/Prof. Jichao Zhao</a>, University of Auckland</span></div>
+          <div class="slot break"><span class="slot-time">3:00–3:30 pm</span><strong>☕ Afternoon tea</strong></div>
+          <div class="slot wun"><span class="tag">WUN invited talks</span><span class="slot-time">3:30–4:00 pm</span><strong>3D Visual Character Motion Generation, Reconstruction, and Embodied Agents</strong><span class="who"><a href="https://vision-and-learning-lab-ualberta.github.io/" target="_blank" rel="noopener noreferrer">Prof. Li Cheng</a>, University of Alberta</span><details class="abstract"><summary>Abstract</summary><p>Recent advancements in sensing and deep learning have unlocked exciting possibilities for the visual analysis of human and animal motions in the physical 3D space. These innovations hold great potential for applications across diverse domains, including for example natural user interfaces, AR/VR, robotics, and gaming. In this talk, I will present the latest research progress in this rapidly evolving field including especially 3D human motion generation, pose tracking and shape reconstruction, and related tasks&nbsp;– highlighting key developments from the past few years as well as contributions from our own work.</p></details></div>
           <div class="slot wun"><span class="tag">WUN invited talks</span><span class="slot-time">4:00–4:30 pm</span><strong>Talk: TBD</strong><span class="who"><a href="https://research.unsw.edu.au/people/dr-dong-gong" target="_blank" rel="noopener noreferrer">Dr. Dong Gong</a>, University of New South Wales</span></div>
           <div class="slot wun"><span class="slot-time">4:30–5:00 pm</span><strong>Collaboration discussion and closing</strong><span class="desc">Joint papers, funding proposals, student exchanges and next steps</span></div>
           <div class="slot miccai"><span class="slot-time">12:30–2:00 pm</span><strong>MICCAI 2027 discussion session</strong><span class="desc">A short, informative meeting on initiatives related to MICCAI 2027</span><span class="who">📍 Level 9, 70 Symonds Street</span></div>
@@ -343,7 +352,7 @@
           </a>
         </li>
         <li>
-          <a class="speaker-card" href="https://www.ece.ualberta.ca/~lcheng5/" target="_blank" rel="noopener noreferrer" aria-label="View Li Cheng’s profile page">
+          <a class="speaker-card" href="https://vision-and-learning-lab-ualberta.github.io/" target="_blank" rel="noopener noreferrer" aria-label="View Li Cheng’s profile page">
             <div class="speaker-photo"><img src="assets/speakers/li-cheng.jpg" alt="Li Cheng" width="320" height="320" loading="lazy" decoding="async"></div>
             <div class="speaker-details"><span class="speaker-role">Professor</span><h3 class="speaker-name">Li Cheng</h3><p class="speaker-affiliation">Department of Electrical and Computer Engineering, University of Alberta</p></div>
           </a>
@@ -377,6 +386,13 @@
           <a class="chair-card" href="https://profiles.auckland.ac.nz/j-zhao" target="_blank" rel="noopener noreferrer" aria-label="View Jichao Zhao’s profile page">
             <div class="chair-photo"><img src="assets/chairs/jichao-zhao.jpg" alt="Jichao Zhao" width="180" height="180" loading="lazy" decoding="async"></div>
             <h3 class="chair-name">Jichao Zhao</h3>
+            <p class="chair-affiliation">University of Auckland</p>
+          </a>
+        </li>
+        <li>
+          <a class="chair-card" href="https://ml4sg.auckland.ac.nz/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Centre of Machine Learning for Social Good website">
+            <div class="chair-photo wordmark" aria-hidden="true">ML4SG</div>
+            <h3 class="chair-name">Centre of Machine Learning for Social Good</h3>
             <p class="chair-affiliation">University of Auckland</p>
           </a>
         </li>
